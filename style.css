@@ -1,116 +1,136 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
 }
 
 body {
   font-family: "Lato", sans-serif;
   background-color: #333;
   color: #222;
-  overflow-x: hidden;
-  margin: 0;
+  overflow-x: hidden; /* Hides horizontal scrollbar */
+  margin: 0; /* Removes default margin */
 }
+
 .container {
   background-color: #fafafa;
-  transform-origin: top left;
-  transition: transform 0.5s linear;
-  width: 100vw;
-  min-height: 100vh;
-  padding: 50px;
+  transform-origin: top left; /* Sets the origin point for transformations (top-left corner) */
+  transition: transform 0.5s linear; /* Adds a smooth transition effect for transformations */
+  width: 100vw; /* Sets the width to 100% of the viewport width */
+  min-height: 100vh; /* Sets the minimum height to 100% of the viewport height */
+  padding: 50px; /* Adds padding inside the container */
 }
 
 .container.show-nav {
-  transform: rotate(-20deg);
+  transform: rotate(
+    -20deg
+  ); /* Rotates the container by -20 degrees when the 'show-nav' class is applied */
 }
 
 .circle-container {
-  position: fixed;
-  top: -100px;
-  left: -100px;
+  position: fixed; /* Fixes the position of the circle container relative to the viewport */
+  top: -100px; /* Positions the circle container 100px above the top edge */
+  left: -100px; /* Positions the circle container 100px to the left of the left edge */
 }
 
 .circle {
   background-color: #ff7979;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  position: relative;
-  transition: transform 0.5s linear;
+  height: 200px; /* Sets the height of the circle */
+  width: 200px; /* Sets the width of the circle */
+  border-radius: 50%; /* Makes the element a perfect circle */
+  position: relative; /* Positions the circle relative to its normal position */
+  transition: transform 0.5s linear; /* Adds a smooth transition effect for transformations */
 }
+
 .container.show-nav .circle {
-  transform: rotate(-70deg);
+  transform: rotate(
+    -70deg
+  ); /* Rotates the circle by -70 degrees when the 'show-nav' class is applied */
 }
+
 .circle button {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100px;
-  background: transparent;
-  border: 0;
-  font-size: 26px;
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  position: absolute; /* Positions the button absolutely within the circle */
+  top: 50%; /* Positions the button 50% from the top of the circle */
+  left: 50%; /* Positions the button 50% from the left of the circle */
+  height: 100px; /* Sets the height of the button */
+  background: transparent; /* Makes the button background transparent */
+  border: 0; /* Removes the border */
+  font-size: 26px; /* Sets the font size of the button */
   color: #fff;
 }
+
 .circle button:focus {
-  outline: none;
+  outline: none; /* Removes the default focus outline */
 }
+
 .circle button#open {
-  left: 60%;
+  left: 60%; /* Positions the open button 60% from the left of the circle */
 }
 
 .circle button#close {
-  top: 60%;
-  transform: rotate(90deg);
-  transform-origin: top left;
+  top: 60%; /* Positions the close button 60% from the top of the circle */
+  transform: rotate(90deg); /* Rotates the close button by 90 degrees */
+  transform-origin: top left; /* Sets the origin point for the rotation (top-left corner) */
 }
 
 .container.show-nav + nav li {
-  transform: translateX(0);
-  transition-delay: 0.3s;
+  transform: translateX(
+    0
+  ); /* Moves the navigation list items back to their original position */
+  transition-delay: 0.3s; /* Adds a delay to the transition effect */
 }
 
 nav {
-  position: fixed;
-  bottom: 40px;
-  left: 0;
-  z-index: 100;
+  position: fixed; /* Fixes the position of the navigation relative to the viewport */
+  bottom: 40px; /* Positions the navigation 40px from the bottom */
+  left: 0; /* Positions the navigation at the left edge */
+  z-index: 100; /* Ensures the navigation is above other elements */
 }
+
 nav ul {
-  list-style: none;
-  padding-left: 30px;
+  list-style: none; /* Removes the default list styling */
+  padding-left: 30px; /* Adds padding to the left of the list */
 }
 
 nav ul li {
-  text-transform: uppercase;
+  text-transform: uppercase; /* Transforms the text to uppercase */
   color: #fff;
-  margin: 40px 0;
-  transform: translateX(-100%);
-  transition: transform 0.4s ease-in;
+  margin: 40px 0; /* Adds margin above and below each list item */
+  transform: translateX(
+    -100%
+  ); /* Moves the list items off-screen to the left */
+  transition: transform 0.4s ease-in; /* Adds a smooth transition effect for transformations */
 }
 
 nav ul li i {
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 20px; /* Sets the font size of the icons */
+  margin-right: 10px; /* Adds margin to the right of the icons */
 }
 
 nav ul li + li {
-  margin-left: 15px;
-  transform: translateX(-150%);
+  margin-left: 15px; /* Adds additional margin to the left of the second list item */
+  transform: translateX(
+    -150%
+  ); /* Moves the second list item further off-screen */
 }
+
 nav ul li + li + li {
-  margin-left: 30px;
-  transform: translateX(-200%);
+  margin-left: 30px; /* Adds additional margin to the left of the third list item */
+  transform: translateX(
+    -200%
+  ); /* Moves the third list item even further off-screen */
 }
 
 .content img {
-  max-width: 100%;
+  max-width: 100%; /* Ensures the image does not exceed the width of its container */
 }
 
 .content {
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: 1000px; /* Sets the maximum width of the content */
+  margin: 50px auto; /* Centers the content and adds margin above and below */
 }
+
 .content h1 {
   color: #555;
   font-style: italic;
@@ -118,5 +138,5 @@ nav ul li + li + li {
 
 .content p {
   color: #333;
-  line-height: 1.5;
+  line-height: 1.5; /* Sets the line height for better readability */
 }
